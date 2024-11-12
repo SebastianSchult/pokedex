@@ -1,0 +1,359 @@
+:root {
+    --upperSectionBackgroundColor: #f0f0f0; /* Standardfarbe */
+  }
+
+/* Allgemeine Stile */
+body {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: red;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header img {
+    max-height: 100px;
+    position: absolute;
+    left: 16px;
+    top: 8px;
+}
+
+/* CSS für den gestrichelten Scrollbalken mit roten und weißen Streifen */
+/* Scrollbalken-Styling für WebKit-basierte Browser */
+::-webkit-scrollbar {
+    width: 12px; /* Breite des Scrollbalkens */
+}
+
+/* Definiere den Hintergrund des Scrollbalkenbereichs */
+/* Hier wird ein einzelnes Hintergrundbild verwendet, das abwechselnd rote und weiße Streifen enthält */
+::-webkit-scrollbar-track {
+    background-image: linear-gradient(to bottom, red 50%, white 50%);
+    background-size: 100% 20px; /* Breite des Bildes ist 100% des Bereichs, Höhe ist 20px */
+}
+
+/* Definiere den Stil für die Scrollleistendruckfläche */
+/* Definiere den Stil für die Scrollleistendruckfläche mit diagonalen Streifen */
+::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(45deg, red 25%, white 25%, white 50%, red 50%, red 75%, white 75%);
+    background-size: 8px 8px; /* Breite und Höhe der diagonalen Streifen */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #cccccc; /* Farbe des Thumb beim Hovern */
+}
+
+/* Aktiviert das rote und weiße Design der Scrollbar-Anzeige */
+/* Nur für WebKit-basierte Browser */
+body {
+    scrollbar-width: thin; /* Dicke der Scrollbar-Anzeige */
+    scrollbar-color: #ff0000 #ffffff; /* Farben für Thumb und Track */
+}
+
+#searchInput {
+    text-align: center;
+    border-radius: 24px;
+    border-color: black;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.title {
+    margin: 10px 0;
+}
+
+input[type="text"] {
+    padding: 8px;
+    font-size: 16px;
+    width: 200px;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* CSS-Stile für die Pokémon-Karten */
+.card {
+    width: 200px;
+    height: 200px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100; /* Höhere Z-Index-Wert für das Modal-Container */
+}
+
+.modalContent {
+    background-color: white;
+    border-radius: 5px;
+    min-width: 400px;
+    min-height: 400px;
+    max-width: 100%;
+    max-height: 80%;
+    overflow: auto;
+    text-align: center;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px; /* optional: Abstand nach oben hinzufügen */
+    gap: 8px;
+}
+
+.stat-bar {
+    margin-bottom: 10px;
+    width: 70%;
+    margin-left: 30%;
+    height: 20px; /* Höhe erhöhen */
+    background-color: #ccc; /* Standard-Hintergrundfarbe für die Balken */
+    display: flex; /* Flexbox-Layout aktivieren */
+    position: relative; /* Relative Positionierung für die stat-bar */
+}
+
+.stat-bar .stat-name {
+    position: absolute; /* Absolute Positionierung für den stat-name */
+    top: 50%; /* Vertikal zentrieren */
+    transform: translateY(-50%); /* Vertikal zentrieren */
+    left: -60px; /* Links ausrichten */
+    margin-right: 10px; /* Abstand zwischen dem Text und der Balkenanzeige */
+}
+
+.stat-name {
+    left: -120px !important; 
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.stat-bar .stat-value {
+    height: 100%;
+    background-color: red; /* Rote Farbe für die Balken */
+    text-align: center;
+    color: white;
+    display: flex; /* Flexbox-Layout aktivieren */
+    align-items: center; /* Vertikale Ausrichtung zentrieren */
+    justify-content: center; /* Horizontale Ausrichtung zentrieren */
+}
+
+/* CSS für den Container der Pokémon-Informationen */
+.pokemon-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative; /* Position relativ für die ID */
+}
+
+/* CSS für den Pokemon-Namen */
+.pokemon-name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* CSS für das Pokemon-Bild */
+.pokemon-image img {
+    max-width: 100%; /* Bild auf die maximale Breite des Containers skalieren */
+}
+
+/* CSS für die Pokemon-Details */
+.pokemon-details {
+    text-align: center;
+}
+
+/* CSS für die Typen-Bezeichnung */
+.type-label {
+    font-weight: bold; /* Fett darstellen */
+}
+
+/* CSS für die eingekreisten Typen */
+.type {
+    display: inline-block; /* Als Blockelement behandeln */
+    color: white;
+    font-weight: bold;
+    padding: 4px 8px; /* Innenabstand setzen */
+    margin: 0 5px; /* Außenabstand setzen */
+    border: 2px solid black; /* Rahmen hinzufügen */
+    border-radius: 16px; /* Runde Ecken für das Einkreisen */
+    background-color: rgba(0, 0, 0, 0.2); /* Hintergrundfarbe mit leichter Transparenz für den Dunkelungseffekt */
+}
+
+.pokemon-id {
+    position: absolute;
+    top: 10px; /* Abstand zum oberen Rand */
+    right: 10px; /* Abstand zum rechten Rand */
+    background-color: rgba(255, 255, 255, 0.7); /* Hintergrundfarbe */
+    padding: 5px 10px; /* Innenabstand */
+    border-radius: 42px; /* Abrundung der Ecken */
+}
+
+/*Detailskarte*/
+
+.upperSection {
+    background-color: var(--upperSectionBackgroundColor);
+    padding: 20px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    text-align: right;
+    position: relative;
+  }
+
+.upperSection .pokemon-id {
+    font-size: 12px; /* Schriftgröße der Pokemon-ID */
+    position: absolute; /* Absolute Positionierung der Pokemon-ID */
+    top: 10px; /* Abstand zum oberen Rand */
+    right: 10px; /* Abstand zum rechten Rand */
+    color: white; /* Schriftfarbe */
+}
+
+.upperSection img {
+    display: block;
+    margin: 0 auto; /* Das Bild zentriert ausrichten */
+    height: 240px;
+}
+
+.lowerSection {
+    background-color: white;
+    padding: 20px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    text-align: center;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+}
+
+/* Anordnung der Karten je nach Bildschirmgröße */
+@media screen and (min-width: 768px) {
+    .card {
+        width: calc(25% - 20px); /* Berechne 25% der Breite minus den Abstand zwischen den Karten */
+    }
+}
+
+/* Weitere Anpassungen für kleinere Bildschirme hier hinzufügen */
+
+
+.card:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+footer {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* CSS für den Button */
+button {
+    padding: 10px 20px;
+    font-size: 24px;
+    background-color: red; /* Hintergrundfarbe rot */
+    color: white; /* Textfarbe weiß */
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin: 12px auto 12px; /* 12px Abstand nach unten und automatische zentrierte Ausrichtung */
+    display: block; /* Ändern der Anzeige auf Block, um die automatische Ausrichtung zu ermöglichen */
+}
+
+button:hover {
+    background-color: darkred; /* Farbe beim Hovern dunkleres Rot */
+}
+
+/* Responsive Stile */
+@media screen and (max-width: 768px) {
+    .card {
+        width: calc(50% - 20px); /* 50% der Breite minus die Ränder */
+    }
+    header img {
+        max-height: 80px;
+        left: 12px;
+        
+    }
+}
+
+@media screen and (max-width: 650px) {
+    header img {
+        max-height: 40px;
+        left: 10px;  
+    }
+}
+
+@media (max-width: 400px) {
+    header img {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .card {
+        width: calc(100% - 20px); /* Volle Breite minus die Ränder */
+    }
+    .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 100; /* Höhere Z-Index-Wert für das Modal-Container */
+    }
+    
+    .modalContent {
+        background-color: white;
+        border-radius: 5px;
+        min-width: 300px; /* Anpassung der minimalen Breite für kleinere Bildschirme */
+        max-width: 90%; /* Maximale Breite für größere Bildschirme */
+        max-height: 80%;
+        overflow: auto;
+        text-align: center;
+    }
+
+    .stat-name {
+        font-size: 8px !important; /* Kleinere Schriftgröße für kleine Bildschirme */
+        left: -80px !important; /* Links ausrichten */
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1020px) {
+    .card {
+        width: calc(33.33% - 20px); /* Drei Karten pro Zeile */
+    }
+}
+
+@media screen and (max-width: 559px) {
+    .card {
+        width: calc(100% - 20px); /* Eine Karte pro Zeile */
+    }
+    header img {
+        max-height: 40px;
+        left: 10px;
+        
+    }
+}
