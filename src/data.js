@@ -20,7 +20,12 @@ const germanTypeTranslations = {
     fairy: 'Fee'
 };
 
-// Funktion zum Festlegen der Hintergrundfarbe basierend auf dem Typ
+
+/**
+ * Gibt die Hintergrundfarbe einer Pokémon-Karte basierend auf dem Typ zurück.
+ * @param {string} type - Der Typ des Pokémon
+ * @returns {string} Die Farbe als Hex-Code
+ */
 function getCardBackgroundColor(type) {
     const colorMap = {
         'Normal': '#A8A878',

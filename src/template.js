@@ -1,3 +1,21 @@
+/**
+ * Generates HTML for a Pokémon card.
+ *
+ * This function constructs a Pokémon card with details such as the Pokémon's
+ * name, ID, image, and types. The card's background color is set based on
+ * the Pokémon's first type.
+ *
+ * @param {Object} pokemon - The Pokémon object containing the attributes 
+ *                           necessary for generating the card. 
+ *                           Expected properties include:
+ *                           - id: The unique identifier for the Pokémon.
+ *                           - name: The English name of the Pokémon.
+ *                           - germanName: The German name of the Pokémon, if available.
+ *                           - image: The URL of the Pokémon's image.
+ *                           - types: An array of the Pokémon's types.
+ * @returns {string} The HTML string representing the Pokémon card.
+ */
+
 function createPokemonCardHTML(pokemon) {
     const cardHTML = `
         <div class="card" id="pokemon-${pokemon.id}" style="background-color: ${getCardBackgroundColor(pokemon.types[0])};">
@@ -13,7 +31,24 @@ function createPokemonCardHTML(pokemon) {
     return cardHTML;
 }
 
-// Funktion zum Generieren des HTML-Codes für eine Pokémon-Karte
+
+/**
+ * Generates HTML for a Pokémon card.
+ *
+ * This function constructs a Pokémon card with the Pokémon's name, ID, image,
+ * and types. It formats the card's appearance by applying styles to each component.
+ * The card's background color is determined by the Pokémon's first type.
+ *
+ * @param {Object} pokemon - The Pokémon object containing necessary attributes.
+ *                           Expected properties:
+ *                           - id: The unique identifier for the Pokémon.
+ *                           - name: The English name of the Pokémon.
+ *                           - germanName: The German name of the Pokémon, if available.
+ *                           - image: The URL of the Pokémon's image.
+ *                           - types: An array of the Pokémon's types.
+ * @returns {string} The HTML string representing the Pokémon card.
+ */
+
 function createPokemonCardHTML(pokemon) {
     return `
         <div class="pokemon-info">
@@ -28,9 +63,26 @@ function createPokemonCardHTML(pokemon) {
     `;
 }
 
-// Funktion zum Generieren des HTML-Codes für die Detailansicht eines Pokemons
+
+
+/**
+ * Generates HTML for a Pokémon detail modal.
+ *
+ * This function constructs the HTML structure for a modal that displays a Pokémon's details,
+ * including its name, types, image, and stats chart. The modal has an upper section with a 
+ * background color based on the Pokémon's first type and a lower section with navigation buttons.
+ *
+ * @param {Object} pokemon - The Pokémon object containing details such as name, types, and image.
+ *                           Expected properties:
+ *                           - germanName: The German name of the Pokémon, if available.
+ *                           - name: The English name of the Pokémon.
+ *                           - types: An array of the Pokémon's types.
+ *                           - image: The URL of the Pokémon's image.
+ * @returns {string} The HTML string representing the Pokémon detail modal.
+ */
+
 function createModalHTML(pokemon) {
-    const infoHTML = createPokemonInfo(pokemon);
+const infoHTML = createPokemonInfo(pokemon);
     const statsChartHTML = createPokemonStatsChart(pokemon);
 
     // Hintergrundfarbe basierend auf dem Typ des Pokemons für den oberen Bereich festlegen
